@@ -24,6 +24,7 @@ class QQListTableViewController: UITableViewController {
         super.viewDidLoad()
         //1.加载数据
          musicModels = QQDataTool.getMusicListData()
+         QQMusicOperationTool.shared.musicMList = musicModels
         //2.初始化界面
         setupUI()
     }

@@ -34,5 +34,20 @@ class QQMusicTool: NSObject {
         player?.play()
     
     }
+    //暂停
+    func puaseCurrentMusic() {
+      player?.pause()
+    }
+    
+    //播放当前音乐
+    func playCurrentMusic() {
+        player?.play()
+    }
+    //停止当前的音乐
+    func stopCurrentMusic() {
+        player?.currentTime = 0
+        player?.stop()
+    
+    }
     
 }

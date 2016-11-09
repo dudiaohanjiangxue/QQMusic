@@ -61,6 +61,9 @@
 		4A2249D91DD17C3300F0A7A6 /* QQListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A2249D71DD17C3300F0A7A6 /* QQListCell.xib */; };
 		4A697D181DD1AFE900B97BAC /* QQMusicTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A697D171DD1AFE900B97BAC /* QQMusicTool.swift */; };
 		4A697D1A1DD1B01D00B97BAC /* QQMusicOperationTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A697D191DD1B01D00B97BAC /* QQMusicOperationTool.swift */; };
+		4A697D1C1DD2BD5A00B97BAC /* QQMusicMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A697D1B1DD2BD5A00B97BAC /* QQMusicMessageModel.swift */; };
+		4A697D1E1DD2BDE800B97BAC /* QQTimeTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A697D1D1DD2BDE800B97BAC /* QQTimeTool.swift */; };
+		4A697D201DD2C86200B97BAC /* CALayerAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A697D1F1DD2C86200B97BAC /* CALayerAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +122,9 @@
 		4A2249D71DD17C3300F0A7A6 /* QQListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QQListCell.xib; sourceTree = "<group>"; };
 		4A697D171DD1AFE900B97BAC /* QQMusicTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QQMusicTool.swift; sourceTree = "<group>"; };
 		4A697D191DD1B01D00B97BAC /* QQMusicOperationTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QQMusicOperationTool.swift; sourceTree = "<group>"; };
+		4A697D1B1DD2BD5A00B97BAC /* QQMusicMessageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QQMusicMessageModel.swift; sourceTree = "<group>"; };
+		4A697D1D1DD2BDE800B97BAC /* QQTimeTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QQTimeTool.swift; sourceTree = "<group>"; };
+		4A697D1F1DD2C86200B97BAC /* CALayerAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +190,7 @@
 		4A2248BC1DD171D800F0A7A6 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				4A697D1F1DD2C86200B97BAC /* CALayerAnimation.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -210,6 +217,7 @@
 			children = (
 				4A697D171DD1AFE900B97BAC /* QQMusicTool.swift */,
 				4A697D191DD1B01D00B97BAC /* QQMusicOperationTool.swift */,
+				4A697D1D1DD2BDE800B97BAC /* QQTimeTool.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -235,6 +243,7 @@
 		4A2248C41DD171D800F0A7A6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4A697D1B1DD2BD5A00B97BAC /* QQMusicMessageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -472,10 +481,13 @@
 			files = (
 				4A2249D11DD1749200F0A7A6 /* QQDetailViewController.swift in Sources */,
 				4A2249D31DD1754700F0A7A6 /* QQMusicModel.swift in Sources */,
+				4A697D1E1DD2BDE800B97BAC /* QQTimeTool.swift in Sources */,
+				4A697D1C1DD2BD5A00B97BAC /* QQMusicMessageModel.swift in Sources */,
 				4A697D181DD1AFE900B97BAC /* QQMusicTool.swift in Sources */,
 				4A2248CA1DD171D800F0A7A6 /* AppDelegate.swift in Sources */,
 				4A2249D81DD17C3300F0A7A6 /* QQListCell.swift in Sources */,
 				4A2249CF1DD1746500F0A7A6 /* QQListTableViewController.swift in Sources */,
+				4A697D201DD2C86200B97BAC /* CALayerAnimation.swift in Sources */,
 				4A2249D51DD1763400F0A7A6 /* QQDataTool.swift in Sources */,
 				4A697D1A1DD1B01D00B97BAC /* QQMusicOperationTool.swift in Sources */,
 			);
