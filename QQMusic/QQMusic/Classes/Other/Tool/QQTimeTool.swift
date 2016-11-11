@@ -17,4 +17,15 @@ class QQTimeTool: NSObject {
         return String(format: "%02d:%02d", min, sec)
     
     }
+    
+    class func getTime(formarTime: String) -> TimeInterval {
+       let minSec = formarTime.components(separatedBy: ":")
+        if  minSec.count == 2 {
+            let min = Double(minSec[0])
+            let sec = Double(minSec[1])
+            return min! * 60 + sec!
+        }
+      return 0
+    
+    }
 }

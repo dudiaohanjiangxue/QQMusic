@@ -40,7 +40,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xz7-Q5-KSA" id="nsm-z9-UNM">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -99,8 +99,13 @@
                                         <color key="textColor" red="1" green="0.47986211404178469" blue="0.45450872839319878" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mfC-Ct-LMT">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mfC-Ct-LMT">
                                         <rect key="frame" x="68" y="10" width="239" height="31"/>
+                                        <connections>
+                                            <action selector="change:" destination="Fgt-zj-oDs" eventType="valueChanged" id="mQE-IH-t12"/>
+                                            <action selector="down:" destination="Fgt-zj-oDs" eventType="touchDown" id="Kyo-2H-ml6"/>
+                                            <action selector="up:" destination="Fgt-zj-oDs" eventType="touchUpInside" id="IMs-gX-VZc"/>
+                                        </connections>
                                     </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAb-1K-8d6">
                                         <rect key="frame" x="40" y="58" width="60" height="60"/>
@@ -168,7 +173,7 @@
                                             <constraint firstAttribute="height" constant="240" id="mcq-NR-9bk"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是歌词" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kme-ye-89p">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是歌词" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kme-ye-89p" customClass="QQLrcLabel" customModule="QQMusic" customModuleProvider="target">
                                         <rect key="frame" x="152.5" y="347" width="69.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.71438364173574898" green="0.99550162096818418" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -267,7 +272,7 @@
                         <outlet property="currentTimeLabel" destination="mHe-Co-l6a" id="opJ-fx-TJN"/>
                         <outlet property="foreImageView" destination="bLw-oV-ZFH" id="uPi-gG-ocD"/>
                         <outlet property="lrcBackView" destination="8uP-8B-kBB" id="QF1-8f-B5z"/>
-                        <outlet property="lrcLabel" destination="Kme-ye-89p" id="PK3-eN-Jop"/>
+                        <outlet property="lrcLabel" destination="Kme-ye-89p" id="dYn-K1-0Jl"/>
                         <outlet property="playOrPuaseBtn" destination="rVC-ts-msC" id="19S-ci-hd8"/>
                         <outlet property="progressSlider" destination="mfC-Ct-LMT" id="GEZ-hD-3ea"/>
                         <outlet property="singerNameLabel" destination="PGC-Ov-aUA" id="heK-4F-PHC"/>

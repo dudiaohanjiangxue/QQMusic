@@ -12,6 +12,18 @@ class QQMusicTool: NSObject {
 
     var player: AVAudioPlayer?
     
+    override init() {
+        super.init()
+        let session = AVAudioSession.sharedInstance()
+        do {
+            try session.setCategory(AVAudioSessionCategoryPlayback)
+            try session.setActive(true)
+        }catch {
+        
+         return
+        }
+    }
+    
     func playMusic(model: QQMusicModel) {
       //1.获取音乐播放路径
         guard  let url = Bundle.main.url(forResource: model.filename, withExtension: nil) else {
@@ -48,6 +60,12 @@ class QQMusicTool: NSObject {
         player?.currentTime = 0
         player?.stop()
     
+    }
+    
+    //设置时间
+    func setCurrentTime(time: TimeInterval) {
+      player?.currentTime = time
+      
     }
     
 }

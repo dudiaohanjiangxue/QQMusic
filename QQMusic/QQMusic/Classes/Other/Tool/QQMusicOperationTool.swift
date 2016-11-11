@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MediaPlayer
 
 class QQMusicOperationTool: NSObject {
     //单例
@@ -17,6 +18,8 @@ class QQMusicOperationTool: NSObject {
     var musicMList: [QQMusicModel]?
     //播放的模型
     private var musicMessageM: QQMusicMessageModel = QQMusicMessageModel()
+    ///记录上一次的行号
+    var lastRow = 0
     
     ///当前的索引
     var currentIndex:Int = 0 {
@@ -82,4 +85,77 @@ class QQMusicOperationTool: NSObject {
         let model = musicMList![currentIndex]
         playMusic(model: model)
     }
+    
+    //设置当前时间
+    func setCuurentTime(time: TimeInterval) {
+        tool.setCurrentTime(time: time)
+    }
+    
+    
+}
+
+extension QQMusicOperationTool {
+   
+   //设置锁屏的音乐播放界面
+    func setupLockMessage() {
+        let musicMessageModel = getMusicMessageM()
+         let infoCenter = MPNowPlayingInfoCenter.default()
+        
+            var name = ""
+            var singer = ""
+        if musicMessageModel.musicM?.name != nil {
+            
+            name = (musicMessageModel.musicM?.name)!
+        }
+        if musicMessageModel.musicM?.singer != nil {
+        
+            singer = (musicMessageModel.musicM?.singer)!
+        }
+        
+        var artwork: MPMediaItemArtwork?
+        let imageName = musicMessageModel.musicM?.icon
+        if imageName != nil {
+        let image = UIImage(named: imageName!)
+            if image != nil {
+                let lrcMs = QQDataTool.getMusicLrc(lrcName: (musicMessageModel.musicM?.lrcname)!)
+                
+                let rowLrc = QQDataTool.getcurrentRowLrc(lrcModelS: lrcMs, currentTime: musicMessageModel.currentTime)
+                
+                if lastRow != rowLrc.row {
+                    lastRow = rowLrc.row
+                    let resultImage = QQImageTool.getImage(sourceImage: image!, text: rowLrc.LrcModel?.lrcContent)
+                    print(resultImage)
+                    artwork = MPMediaItemArtwork(image: resultImage)
+                }
+                
+              
+            
+            }
+        }
+        
+        
+        let infoDic: NSMutableDictionary = NSMutableDictionary()
+        infoDic.setValue(name, forKey: MPMediaItemPropertyAlbumTitle)
+        infoDic.setValue(singer, forKey: MPMediaItemPropertyArtist)
+        infoDic.setValue(musicMessageModel.totalTime, forKey: MPMediaItemPropertyPlaybackDuration)
+        infoDic.setValue(musicMessageModel.currentTime, forKey: MPNowPlayingInfoPropertyElapsedPlaybackTime)
+        
+        
+        if artwork != nil {
+            infoDic.setValue(artwork!, forKey: MPMediaItemPropertyArtwork)
+            let infoDic2 = infoDic.copy() as! [String : Any]
+            
+            //设置信息
+            infoCenter.nowPlayingInfo = infoDic2
+        }else {
+          print("什么")
+//           infoDic.setValue(artwork!, forKey: MPMediaItemPropertyArtwork)
+        }
+        
+       
+        //接受远程事件
+        UIApplication.shared.beginReceivingRemoteControlEvents()
+    
+    }
+    
 }
